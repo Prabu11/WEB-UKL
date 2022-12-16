@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Travel</title>
+	<link rel="stylesheet" type="text/css" href="about.css">
+	<link rel="stylesheet"
+	
+  href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+	<!--header--->
+	<header>
+		<a href="#" class="logo">Travel</a>
+		<div class="bx bx-menu" id="menu-icon"></div>
+
+		<ul class="navbar">
+			<li><a href="#home">Home</a></li>
+			<li><a href="#package">Package</a></li>
+			<li><a href="#beli">transaction</a></li>
+			<li><a href="#destination">Destination</a></li>
+			<li><a href="/home">Logout</a></li>
+		</ul>
+	</header>
+
+	<!--Home section--->
+	<section class="home" id="home">
+		<div class="home-text">
+			<h1><br> Travel</h1>
+			<p>Layanan Pelanggan Yang Sangat Luas</p>
+			
+		</div>
+	</section>
+
+	
+
+	<!--Package section--->
+	<section class="package" id="package">
+		<div class="title">
+			<h2>Destinasi Tour Yang<br>Akan Datang</h2>
+		</div>
+
+		<div class="package-content">
+			<div class="box">
+				<div class="thum">
+					<img src="img/The-Borobudur-Temple-in-Indonesia-is-beyond-breathtaking.png">
+					<!-- <h3>Rp.2.500.000</h3> -->
+				</div>
+
+				<div class="dest-content">
+					<div class="location">
+						<h4>Yogyakarta</h4>
+						<p>2.500.000</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="box">
+				<div class="thum">
+					<img src="img/The-Gates-Of-Heaven-Bali-At-Lempuyang-Temple.png">
+					<!-- <h3>Rp.5.000.000</h3> -->
+				</div>
+
+				<div class="dest-content">
+					<div class="location">
+						<h4>Bali</h4>
+						<p>5.000.000</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="box">
+				<div class="thum">
+					<img src="img/Premium-Photo-_-Jakarta-city-skyline-with-national-monument-_monas_-in-the-afternoon.png">
+					<!-- <h3>Rp.10.000.000</h3> -->
+				</div>
+
+				<div class="dest-content">
+					<div class="location">
+						<h4>Jakarta</h4>
+						<p>10.000.000</p>
+					</div>
+					
+				</div>
+			</div>
+
+		</div>
+	</section>
+
+	
+	<!--Package section--->
+	<section class="package" >
+		<div class="title">
+			<h2>Destinasi Tour Yang<br>Bisa Di Pesan</h2>
+		</div>
+
+		<div class="package-content">
+			<% for (item of items) { %>
+			<div class="box">
+				<div class="thum">
+					<img height="300px" width="200px" src="<%= item.gambar %>">
+					<!-- <h3>Rp.10.000.000</h3> -->
+				</div>
+
+				<div class="dest-content">
+					<div class="location">
+						<h4><%= item.name %></h4>
+						<p><%= item.harga %></p>
+					</div>
+					
+				</div>
+			</div>
+			<% } %>
+
+		</div>
+	</section>
+<section  id="beli" > 
+	<form action="/items/beli" method="post"  class="title">
+		<h3 class="subJudul mt-5 mb-5 text-center" id="projectPage">Form Pembelian</h3>
+		<div class="flex items-center" >
+			<input type="text" name="pembeli" placeholder="Nama Pembeli" class="w-1/5 w-full border px-3 py-2 text-sm mr-2 bg-white">
+			<select name="type" class="w-1/5 w-full border px-3 py-2 text-sm mr-2 bg-white">
+				<option value="dibeli">Dibeli</option>
+			</select>
+			<select placeholder="Paket Item" name="item_id" class="w-2/5 w-full border px-3 py-2 text-sm mr-2 bg-white">
+				<% for (item of items) { %>
+					<option value="<%= item.id %>"><%= item.name %></option>
+				<% } %>
+			</select>
+			<input type="number" name="amount" value="1" class="w-1/5 w-full border px-3 py-2 text-sm mr-2 bg-white">
+			<button
+			class="w-30 btn btn-lg btn-primary"
+			style="background-color: #bc9667; font-size: 15px; border: transparent;" 
+			onclick="alert('Pembelian Berhasil!')">
+			Buy
+			</button>
+		</div>
+	  </form>
+	</section>
+	<!--destination section--->
+	<section class="destination" id="destination">
+		<div class="title">
+			<h2>Destinasi Yang Sangat<br> Populer!</h2>
+		</div>
+
+		<div class="destination-content">
+			<div class="col-content">
+				<img src="img/Floating temple ulun danu bratan is amazing view of the temple which is located beside of the lake.png">
+				<h5>Danau Bratan</h5>
+				<p>BALI</p>
+			</div>
+
+			<div class="col-content">
+				<img src="img/Gunung Bromo Sunrise Tour.png">
+				<h5>Gunung Bromo</h5>
+				<p>MALANG</p>
+			</div>
+
+			<div class="col-content">
+				<img src="img/Nusa Penida, Bali.png">
+				<h5>Nusa Penida</h5>
+				<p>BALI</p>
+			</div>
+
+			<div class="col-content">
+				<img src="img/Pantai Pandawa Bali,Berpasir Putih  Ombaknya Begitu Tenang.png">
+				<h5>Pantai Pandawa</h5>
+				<p>BALI</p>
+			</div>
+
+			<div class="col-content">
+				<img src="img/Raja Ampat, Papua, Indonesia.png">
+				<h5>Raja Ampat</h5>
+				<p>PAPUA</p>
+			</div>
+
+			<div class="col-content">
+				<img src="img/Setelah Menanti 28 Tahun, Ini 10 Potret Kemegahan Patung GWK di Bali.png">
+				<h5>Patung GWK</h5>
+				<p>BALI</p>
+			</div>
+
+		</div>
+	</section>
+
+	<!--link to js--->
+	<script type="text/javascript" src="about.js"></script>
+
+</body>
+</html>
